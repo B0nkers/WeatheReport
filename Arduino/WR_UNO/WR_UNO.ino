@@ -623,12 +623,12 @@ int SendToDatabase()
   static unsigned long long last_check;
   if(fabs(cur_time - last_check) >= 5*MIN)
   {
-    if (cliente.connect("www.weathereport.cba.pl", 80)) 
+    if (cliente.connect("Host: www.**********.****.com", 80)) 
     { //Connecting at the IP address and port we saved before
       if(resume_disp == 1 || resume_disp == 2)
       {
   
-        cliente.print("GET /wr_data.php?"); //Connecting and Sending values to database
+        cliente.print("GET /*****.php?"); //Connecting and Sending values to database
         cliente.print("temperature=");
         cliente.print(tempG, 1);
         cliente.print("&humidity=");
@@ -645,7 +645,7 @@ int SendToDatabase()
         cliente.print("&weather=");
         cliente.print(readWeatherEN(data));
         cliente.println( " HTTP/1.1");
-        cliente.println( "Host: www.weathereport.cba.pl" );
+        cliente.println( "Host: www.**********.****.com" );
         cliente.println( "Connection: close" );
         cliente.println();
     
@@ -653,7 +653,7 @@ int SendToDatabase()
       else
       {
 
-        cliente.print("GET /wr_data.php?"); //Connecting and Sending values to database
+        cliente.print("GET /*****.php?"); //Connecting and Sending values to database
         cliente.print("temperature=");
         cliente.print(tempG, 1);
         cliente.print("&humidity=");
@@ -661,7 +661,7 @@ int SendToDatabase()
         cliente.print("&pressure=");
         cliente.print(pressG);
         cliente.println( " HTTP/1.1");
-        cliente.println( "Host: www.weathereport.cba.pl" );
+        cliente.println( "Host: www.**********.****.com" );
         cliente.println( "Connection: close" );
         cliente.println();
         
