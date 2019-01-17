@@ -619,24 +619,24 @@ void comapareValues(int pVal, int Val, const LiquidCrystal_I2C * lcd_screen, con
 
 int SendToDatabase()
 {
-  unsigned long long cur_time = millis();
-  static unsigned long long last_check;
-  if(fabs(cur_time - last_check) >= 5*MIN)
+  unsigned long long cur_time = millis();         // current time in milliseconds
+  static unsigned long long last_check;           // stores the value of last time data send
+  if(fabs(cur_time - last_check) >= 5*MIN)        // if 5 minutes have passed since the last data was send
   {
     if (cliente.connect("Host: www.**********.****.com", 80)) 
-    { //Connecting at the IP address and port we saved before
-      if(resume_disp == 1 || resume_disp == 2)
+    { // Connecting at the IP address and port we saved before
+      if(resume_disp == 1 || resume_disp == 2)    // if data was recieved from reciever
       {
   
-        cliente.print("GET /*****.php?"); //Connecting and Sending values to database
-        cliente.print("temperature=");
+        cliente.print("GET /*****.php?");   // Connecting and Sending values to database
+        cliente.print("temperature=");      // Sending values measured by weather station
         cliente.print(tempG, 1);
         cliente.print("&humidity=");
         cliente.print(humG);
         cliente.print("&pressure=");
         cliente.print(pressG);
       
-        cliente.print("&temperature_out=");
+        cliente.print("&temperature_out="); // Sending values measured by weather station
         cliente.print(data.temperature, 1);
         cliente.print("&humidity_out=");
         cliente.print(data.humidity);
@@ -650,7 +650,7 @@ int SendToDatabase()
         cliente.println();
     
       }
-      else
+      else    // Sending values only measured by weather station
       {
 
         cliente.print("GET /*****.php?"); //Connecting and Sending values to database
@@ -667,17 +667,17 @@ int SendToDatabase()
         
       }
   
-      last_check = cur_time;
-      cliente.stop(); //Closing the connection
-      resume_connection = 1;
+      last_check = cur_time;          // assign current time to last_check variable
+      cliente.stop();                 // Closing the connection
+      resume_connection = 1;          // set resume_connection to the true value
       return 1;
     }
-    else {
-      // if you didn't get a connection to the server:
-      Serial.println("disconnected");
-      last_check += 5*SEK;
-      resume_connection = 0;
-      return ERR;
+    else 
+    {
+      //the connection to the server could not be established
+      last_check += 5*SEK;            // try again in 5 seconds
+      resume_connection = 0;          // set resume_connection to the true value
+      return ERR;                     
     }
   }
   return 0;
