@@ -90,8 +90,7 @@ Mount the device according to the schema '/schemas/WR_station_schema.jpg', conne
 Devices are ready to use. Connect devices to the power sources and weather station to the router by cable.
 
 
-##Features
-
+## Features
 List of features:
 * display information on the lcd screen
 * sending data through the Internet connection to the database
@@ -110,7 +109,7 @@ Project is: _finished_
 ## Inspiration
 Project made for the study subject. 
 
-##Sources
+## Sources
 Tutorials:
 https://forbot.pl/blog/kurs-arduino-podstawy-programowania-spis-tresci-kursu-id5290
 https://electronicshobbyists.com/logging-data-to-database-using-arduino-ethernet-shield/
