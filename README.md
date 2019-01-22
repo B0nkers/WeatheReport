@@ -91,7 +91,8 @@ Devices are ready to use. Connect devices to the power sources and weather stati
 
 
 ##Features
-List of features
+
+List of features:
 * display information on the lcd screen
 * sending data through the Internet connection to the database
 * data graphs and tables shown on the website
