@@ -140,7 +140,8 @@ https://github.com/arduino-libraries/Ethernet
 
 
 ## Contact
-Created by marcin.bak287@gmail.com
-
+Created by:
+* marcin.bak287@gmail.com
+* mjratka@gamil.com
 
 
