@@ -36,7 +36,7 @@ Weather station reciever
 ![Example WeatheReport](./img/wrstation.jpg)
 
 Transmitter
-![Example WeatheReport](./img/wrstation.jpg)
+![Example WeatheReport](./img/transmitter.jpg)
 
 
 ## Technologies
