@@ -29,7 +29,14 @@ The transmitter is designed for recording data from the outside.
 Project based on the Arduino modules.
 
 ## Screenshots
+WeatheReport station
 ![Example WeatheReport](./img/weathereport.jpg)
+
+Weather station reciever
+![Example WeatheReport](./img/wrstation.jpg)
+
+Transmitter
+![Example WeatheReport](./img/wrstation.jpg)
 
 
 ## Technologies
